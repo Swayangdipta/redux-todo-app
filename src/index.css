@@ -139,10 +139,16 @@ form{
     right: 80px;
     left: 80px;
   }
+  .list-group{
+    top: 80px;
+  }
 }
 @media only screen and (max-width: 500px){
   .list-group,form{
     right: 40px;
     left: 40px;
+  }
+  .list-group{
+    top: 100px;
   }
 }
