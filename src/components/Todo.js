@@ -28,7 +28,7 @@ const Todo = ({todos,markComplete})=> {
         <ListGroup className="mt-5 mb-2">
             {
                 todos.map((todo,index)=>(
-                    <ListGroupItem key={todo.id} className="listgroupItem">
+                    <ListGroupItem key={todo.id}  className="listgroupItem" style={{background: `${todo.color} !important`}}>
                         {index+1}.<span className="todoItem">{todo.title}</span>
                         <br />
                         <span className="created">{todo.date.dayName} {todo.date.hours}:{todo.date.minutes}{todo.date.ampm}</span>

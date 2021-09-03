@@ -4,10 +4,11 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Roboto Mono', monospace;
 }
 
 body{
-  background-color: #EAD7C7 !important;
+  background-color: #BD2000 !important;
   position: relative;
   margin: 10%;
 }
@@ -19,8 +20,8 @@ form{
   left: 180px;
   border-radius: 8px;
   /* border: 2px solid green; */
-  color: #157575;
-  box-shadow: 0px 3px 18px #756b63,-3px -3px 18px #fff4eb;
+  color: #ffffff;
+  box-shadow: 0px 0px 18px #8C0000;
 }
 
 #todo:focus{
@@ -33,7 +34,7 @@ form{
 }
 
 #todo::placeholder{
-  color: #000 !important;
+  color: #ffffff !important;
 }
 
 .form-group{
@@ -41,9 +42,10 @@ form{
 }
 
 #todo{
-  background: #EAD7C7 !important;
+  background: #8C0000 !important;
   border: none !important;
-  border-bottom: 2px solid #157575 !important;
+  border-bottom: 2px solid #ffffff !important;
+  color: rgb(255, 255, 255);
 }
 
 
@@ -61,16 +63,16 @@ form{
 
 .addon{
   border-radius: 0px 5px 5px 0 !important;
-  background: #157575 !important;
+  background: #FA1E0E !important;
   border: none !important;
-  border-bottom: 2px solid #157575 !important;
+  border-bottom: 2px solid #ffffff !important;
   transition: ease-in-out 0.3s !important;
 }
 
 .addon:hover{
-  background: #0f5353 !important;
+  background: #ff4d40 !important;
   transition: ease-in-out 0.3s !important;
-  border-bottom: 2px solid #0f5353 !important;
+  border-bottom: 2px solid #ffffff !important;
 }
 
 .completedTodo{
@@ -129,10 +131,29 @@ form{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #157575;
-  color: #EAD7C7;
+  background-color: #FA1E0E;
+  color: #ffffff;
   z-index: 200;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700 !important;
 }
+
+.actualTitle{
+  font-weight: 700 !important;
+}
+
+.custom-select{
+  background: #FA1E0E;
+  border: none;
+  border-left: 2px #ffffff solid !important;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  padding-right: 5px;
+  color: #ffffff;
+  font-weight: 400 !important;
+  font-size: 16px;
+}
+
 
 @media only screen and (max-width: 800px){
   .list-group,form{
@@ -150,5 +171,8 @@ form{
   }
   .list-group{
     top: 100px;
+  }
+  .custom-select{
+    font-size: 14px;
   }
 }

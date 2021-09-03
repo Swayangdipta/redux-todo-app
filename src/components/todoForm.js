@@ -19,6 +19,7 @@ import {FaArrowRight} from 'react-icons/all'
 
 const TodoForm = ({addTodo}) => {
     const [title,setTitle] = useState('')
+    const [taskTheme,setTaskTheme] = useState(0)
     
     const handleSubmit = e => {
         e.preventDefault();
@@ -43,10 +44,26 @@ const TodoForm = ({addTodo}) => {
             dayName
         }
 
+        let color = "#FA1E0E";
+
+        if(taskTheme == 0) {
+            color= "#FA1E0E"
+        }else if(taskTheme == 1){
+            color = "#170055"
+        }else if(taskTheme == 2){
+            color = "#F98404"
+            
+        }else if(taskTheme == 3){
+            color = "#261C2C"
+        }else{
+            color = "#FA1E0E"
+        }
+
         const todo = {
             title,
             id: v4(),
-            date: creationDate
+            date: creationDate,
+            color
         }
 
         let todos = []
@@ -62,6 +79,7 @@ const TodoForm = ({addTodo}) => {
         addTodo(todo)
 
         setTitle("")
+        setTaskTheme(0)
     }
 
     useEffect(() => {
@@ -92,6 +110,12 @@ const TodoForm = ({addTodo}) => {
                         value={title}
                         onChange={(e)=> setTitle(e.target.value)}
                     />
+                    <select className="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange={e=>setTaskTheme(e.target.value)}>
+                        <option selected>Category</option>
+                        <option value="1">Morning</option>
+                        <option value="2">Afternoon</option>
+                        <option value="3">Night</option>
+                    </select>
                     <InputGroupAddon>
                         <Button color="primary addon" onClick={handleSubmit}><FaArrowRight/></Button>
                     </InputGroupAddon>
